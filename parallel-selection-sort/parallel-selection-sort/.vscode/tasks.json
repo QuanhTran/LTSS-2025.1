@@ -1,0 +1,86 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-openmp",
+      "type": "shell",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-O3",
+        "-march=native",
+        "-fopenmp",
+        "-g",
+        "selection_sort.cpp",
+        "-o",
+        "build/selection_sort"
+      ],
+      "windows": {
+        "command": "C:/msys64/mingw64/bin/g++.exe",
+        "args": [
+          "-O3",
+          "-fopenmp",
+          "-g",
+          "selection_sort.cpp",
+          "-o",
+          "build/selection_sort.exe"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "run (N=100000)",
+      "type": "shell",
+      "command": "./build/selection_sort",
+      "args": [
+        "100000",
+        "0"
+      ],
+      "windows": {
+        "command": ".\\build\\selection_sort.exe",
+        "args": [
+          "100000",
+          "0"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "run (N=20000 quick)",
+      "type": "shell",
+      "command": "./build/selection_sort",
+      "args": [
+        "20000",
+        "0"
+      ],
+      "windows": {
+        "command": ".\\build\\selection_sort.exe",
+        "args": [
+          "20000",
+          "0"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "build-and-run quick",
+      "dependsOn": [
+        "build-openmp",
+        "run (N=20000 quick)"
+      ],
+      "dependsOrder": "sequence"
+    }
+  ]
+}

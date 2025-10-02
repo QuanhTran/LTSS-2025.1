@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug selection_sort (quick)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/selection_sort",
+      "args": [
+        "20000",
+        "0"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "windows": {
+        "program": "${workspaceFolder}\\build\\selection_sort.exe",
+        "args": [
+          "20000",
+          "0"
+        ],
+        "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe"
+      }
+    }
+  ]
+}
