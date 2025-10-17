@@ -66,7 +66,7 @@ void merge(int arr[], int left, int mid, int right) {
 
 /**
  * \note omp task: Se khong chay code ngay ma se tao ra 1 task rieng -> dua vao hang doi 
- * -> Khi nao co thread ranh thi co the thuc hien no (Kieu: E co viec nay ne, ai ranh lam giup voi !)
+ * -> Khi nao co thread ranh thi co the thuc hien no 
  * -> Cach nay giup tan dung CPU tot hon khi co nhiem vu nho
  * \note firstprivate(left, mid): se copy gia tri tai thoi diem task duoc tao ra vao 1 bien cu bo rieng trong task
  */
